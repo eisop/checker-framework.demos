@@ -1,6 +1,11 @@
+dist: xenial
+
 language: java
 
-script: ./.travis-build.sh
+script:
+  - sudo apt-get -qqy update
+  - sudo apt-get -qqy install ant binutils cpp git gradle libcurl3-gnutls make maven mercurial unzip wget
+  - ./.travis-build.sh
 
 ## Reinstate when the build can use a standard jtreg install
 # addons:
@@ -19,7 +24,7 @@ cache:
     - $HOME/.m2/
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 git:
   depth: 3
