@@ -831,7 +831,7 @@ public final class MathMDE {
     public Integer next() {
       if (!hasNext())
         throw new NoSuchElementException();
-      Integer result = new Integer(current_missing);
+      Integer result = Integer.valueOf(current_missing);
       current_missing++;
       return result;
     }
@@ -965,7 +965,7 @@ public final class MathMDE {
     Arrays.sort(nums);
     long min = nums[0];
     long max = nums[nums.length-1];
-    long[] result = new long[new Long(max - min + 1 - nums.length).intValue()];
+    long[] result = new long[Long.valueOf(max - min + 1 - nums.length).intValue()];
     int result_index = 0;
     long val = min;
     for (int i=0; i<nums.length; i++) {
@@ -1084,7 +1084,7 @@ public final class MathMDE {
     public Long next() {
       if (!hasNext())
         throw new NoSuchElementException();
-      Long result = new Long(current_missing);
+      Long result = Long.valueOf(current_missing);
       current_missing++;
       return result;
     }
@@ -1171,7 +1171,7 @@ public final class MathMDE {
   public static long[] nonmodulus_nonstrict(long[] nums) {
     if (nums.length < 4)
       return null;
-    int max_modulus = new Long(Math.min(nums.length/2, ArraysMDE.element_range(nums)/2)).intValue();
+    int max_modulus = Long.valueOf(Math.min(nums.length/2, ArraysMDE.element_range(nums)/2)).intValue();
 
     // System.out.println("nums.length=" + nums.length + ", range=" + ArraysMDE.element_range(nums) + ", max_modulus=" + max_modulus);
 
@@ -1182,7 +1182,7 @@ public final class MathMDE {
       boolean[] has_modulus = new boolean[m]; // initialized to false?
       int num_nonmodulus = m;
       for (int i=0; i<nums.length; i++) {
-        int rem = new Long(mod_positive(nums[i], m)).intValue();
+        int rem = Long.valueOf(mod_positive(nums[i], m)).intValue();
         if (!has_modulus[rem]) {
           has_modulus[rem] = true;
           num_nonmodulus--;

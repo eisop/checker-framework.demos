@@ -1330,7 +1330,7 @@ public final class FileIO {
                                     reader,
                                     state.file);
         }
-        nonce = new Integer(nonce_number);
+        nonce = Integer.valueOf(nonce_number);
 
         if (Global.debugPrintDtrace) {
           to_write_nonce = true;
@@ -1552,10 +1552,10 @@ public final class FileIO {
       @Interned Invocation invok = invok_noncanonical.canonicalize();
       if (counter.containsKey(invok)) {
         Integer oldCount = counter.get(invok);
-        Integer newCount = new Integer(oldCount.intValue() + 1);
+        Integer newCount = Integer.valueOf(oldCount.intValue() + 1);
         counter.put(invok, newCount);
       } else {
-        counter.put(invok, new Integer(1));
+        counter.put(invok, Integer.valueOf(1));
       }
     }
 

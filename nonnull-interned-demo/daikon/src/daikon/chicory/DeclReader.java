@@ -149,7 +149,7 @@ public class DeclReader {
       } else if (is_int()) {
         Integer val = null;
         try {
-          val = new Integer (value);
+          val = Integer.valueOf(value);
         } catch (Throwable t) {
           System.out.printf ("Unexpected integer value '%s', for variable %s "
                              + "treated as nonsensical%n", value, this.name);
@@ -158,7 +158,7 @@ public class DeclReader {
       } else if (is_double()){
         Double val = null;
         try {
-          val = new Double (value);
+          val = Double.valueOf(value);
         } catch (Throwable t) {
           System.out.printf ("Unexpected double value '%s', for variable %s "
                              + "treated as nonsensical%n", value, this.name);
@@ -406,7 +406,7 @@ public class DeclReader {
           }
           Integer cnt = dec_map.get (vi.get_type_name());
           if (cnt == null)
-            cnt = new Integer(0);
+            cnt = Integer.valueOf(0);
           dec_map.put (vi.get_type_name(), ++cnt);
 
           num_vars++;
@@ -487,7 +487,7 @@ public class DeclReader {
         String declared_type = vi.get_type_name();
         Integer comparability = type_comp.get (declared_type);
         if (comparability == null) {
-          comparability = new Integer (next_comparability);
+          comparability = Integer.valueOf(next_comparability);
           next_comparability++;
           type_comp.put (declared_type, comparability);
           System.out.printf ("declared type %s has comparability %d%n",
@@ -524,7 +524,7 @@ public class DeclReader {
           declared_type = vi.get_type_name();
         Integer comparability = type_comp.get (declared_type);
         if (comparability == null) {
-          comparability = new Integer (next_comparability);
+          comparability = Integer.valueOf(next_comparability);
           next_comparability++;
           type_comp.put (declared_type, comparability);
           System.out.printf ("declared type %s has comparability %d%n",
@@ -553,7 +553,7 @@ public class DeclReader {
         String rep_type = vi.get_rep_type();
         Integer comparability = type_comp.get (rep_type);
         if (comparability == null) {
-          comparability = new Integer (next_comparability);
+          comparability = Integer.valueOf(next_comparability);
           next_comparability++;
           type_comp.put (rep_type, comparability);
           System.out.printf ("representation type %s has comparability %d%n",

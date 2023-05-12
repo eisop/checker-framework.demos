@@ -69,9 +69,9 @@ public class Fmt {
     return (result.toString());
   }
 
-  /** Convenience routine for new Integer(val). **/
+  /** Convenience routine for Integer.valueOf(val). **/
   public static Integer i (int val) {
-    return new Integer (val);
+    return Integer.valueOf(val);
   }
 
   public static String spf (String format, Object arg1) {
