@@ -3079,7 +3079,7 @@ public abstract @Interned class VarInfoName
       QuantifierVisitor[] helper = new QuantifierVisitor[roots.length];
       for (int i=0; i < roots.length; i++) {
         if (QuantHelper.debug.isLoggable(Level.FINE)) {
-          QuantHelper.debug.fine ("Calling quanthelper on: " + new Integer(i) + " " + roots[i]);
+          QuantHelper.debug.fine ("Calling quanthelper on: " + Integer.valueOf(i) + " " + roots[i]);
         }
 
         helper[i] = new QuantifierVisitor(roots[i]);

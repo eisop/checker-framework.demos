@@ -262,8 +262,8 @@ public final class Intern {
     internedIntArrays = new WeakHasherMap<@Interned int[],WeakReference<@Interned int[]>>(new IntArrayHasher());
     internedLongArrays = new WeakHasherMap<@Interned long[],WeakReference<@Interned long[]>>(new LongArrayHasher());
     internedDoubles = new WeakHasherMap<@Interned Double,WeakReference<@Interned Double>>(new DoubleHasher());
-    internedDoubleNaN = new @Interned Double(Double.NaN);
-    internedDoubleZero = new @Interned Double(0);
+    internedDoubleNaN = Double.valueOf(Double.NaN);
+    internedDoubleZero = Double.valueOf(0);
     internedDoubleArrays = new WeakHasherMap<@Interned double[],WeakReference<@Interned double[]>>(new DoubleArrayHasher());
     internedStringArrays = new WeakHasherMap<@Interned String[],WeakReference<@Interned String[]>>(new StringArrayHasher());
     internedObjectArrays = new WeakHasherMap<@Interned Object[],WeakReference<@Interned Object[]>>(new ObjectArrayHasher());
@@ -332,7 +332,7 @@ public final class Intern {
   // Not sure whether this convenience method is really worth it.
   /** Returns an interned Integer with value i. */
   public static @Interned Integer internedInteger(int i) {
-    return intern(new Integer(i));
+    return intern(Integer.valueOf(i));
   }
 
   // Not sure whether this convenience method is really worth it.
@@ -361,7 +361,7 @@ public final class Intern {
   // Not sure whether this convenience method is really worth it.
   /** Returns an interned Long with value i. */
   public static @Interned Long internedLong(long i) {
-    return intern(new Long(i));
+    return intern(Long.valueOf(i));
   }
 
   // Not sure whether this convenience method is really worth it.
@@ -441,7 +441,7 @@ public final class Intern {
   // Not sure whether this convenience method is really worth it.
   /** Returns an interned Double with value i. */
   public static @Interned Double internedDouble(double d) {
-    return intern(new Double(d));
+    return intern(Double.valueOf(d));
   }
 
   // Not sure whether this convenience method is really worth it.

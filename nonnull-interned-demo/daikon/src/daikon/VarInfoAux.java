@@ -156,7 +156,7 @@ public final class VarInfoAux
     @Interned VarInfoAux result = resultUninterned.intern();
     if (debug.isLoggable(Level.FINE)) {
       debug.fine ("New parse " + result);
-      debug.fine ("Intern table size: " + new Integer(interningMap.size()));
+      debug.fine ("Intern table size: " + Integer.valueOf(interningMap.size()));
     }
     return result;
   }

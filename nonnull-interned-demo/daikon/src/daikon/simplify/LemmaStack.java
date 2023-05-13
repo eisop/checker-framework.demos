@@ -458,7 +458,7 @@ public class LemmaStack {
   /** Keep track that we've seen this number in formulas, for the sake
    * of assumeOrdering. */
   public static void noticeInt(long i) {
-    ints_seen.add(new Long(i));
+    ints_seen.add(Long.valueOf(i));
   }
 
   public static void clearInts() {

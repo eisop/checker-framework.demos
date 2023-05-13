@@ -34,6 +34,7 @@
         <arg line="-source 1.8"/>
         <arg line="-Xprefer:newer"/>
         <arg line="@{files}"/>
+        <arg line="-Xlint:-options"/>
         <arg line="-Alint=@{lint}"/>
         <arg line="-Anocheckjdk"/>
         <arg line="-AsuppressWarnings=purity"/>
@@ -62,6 +63,7 @@
         <arg line="-source 1.8"/>
         <arg line="-Xprefer:newer"/>
         <arg line="@{files}"/>
+        <arg line="-Xlint:-options"/>
         <arg line="-Alint=@{lint}"/>
         <arg line="-Aquals=@{quals}"/>
       </java>

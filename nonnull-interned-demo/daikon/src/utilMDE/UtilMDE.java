@@ -726,7 +726,7 @@ public final class UtilMDE {
     } else {
       new_total = old.intValue() + count;
     }
-    return hm.put(key, new Integer(new_total));
+    return hm.put(key, Integer.valueOf(new_total));
   }
 
 
@@ -1924,7 +1924,7 @@ public final class UtilMDE {
       ArrayList<ArrayList<Integer>> combos = create_combinations (arity-1, i, cnt);
       for (Iterator<ArrayList<Integer>> j = combos.iterator(); j.hasNext(); ) {
         ArrayList<Integer> simple = new ArrayList<Integer>();
-        simple.add (new Integer(i));
+        simple.add (Integer.valueOf(i));
         simple.addAll (j.next());
         results.add (simple);
       }

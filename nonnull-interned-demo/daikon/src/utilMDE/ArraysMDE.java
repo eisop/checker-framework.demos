@@ -1662,7 +1662,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to add the last element,
       // but that would make the code much less readable.
-      Byte n = new Byte (a[i]);
+      Byte n = Byte.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1678,7 +1678,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to add the last element,
       // but that would make the code much less readable.
-      Character n = new Character (a[i]);
+      Character n = Character.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1694,7 +1694,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to add the last element,
       // but that would make the code much less readable.
-      Float n = new Float (a[i]);
+      Float n = Float.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1710,7 +1710,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to add the last element,
       // but that would make the code much less readable.
-      Short n = new Short (a[i]);
+      Short n = Short.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1726,7 +1726,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to add the last element,
       // but that would make the code much less readable.
-      Integer n = new Integer (a[i]);
+      Integer n = Integer.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1744,7 +1744,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to create the last element,
       // but that would make the code much less readable.
-      Double n = new Double (a[i]);
+      Double n = Double.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1761,7 +1761,7 @@ public final class ArraysMDE {
     for (int i = 0; i < a.length; i++) {
       // Could be optimized not to create the last element,
       // but that would make the code much less readable.
-      Long n = new Long (a[i]);
+      Long n = Long.valueOf(a[i]);
       if (hs.contains(n)) { return false; }
       hs.add (n);
     }
@@ -1919,11 +1919,11 @@ public final class ArraysMDE {
     Set<Long> setBigger = new HashSet<Long>();
 
     for (int i = 0; i < bigger.length; i++) {
-      setBigger.add(new Long(bigger[i]));
+      setBigger.add(Long.valueOf(bigger[i]));
     }
 
     for (int i = 0; i < smaller.length; i++) {
-      Long elt = new Long(smaller[i]);
+      Long elt = Long.valueOf(smaller[i]);
       if (!setBigger.contains(elt)) return false;
     }
 
@@ -1943,11 +1943,11 @@ public final class ArraysMDE {
     Set<Double> setBigger = new HashSet<Double>();
 
     for (int i = 0; i < bigger.length; i++) {
-      setBigger.add(new Double(bigger[i]));
+      setBigger.add(Double.valueOf(bigger[i]));
     }
 
     for (int i = 0; i < smaller.length; i++) {
-      Double elt = new Double(smaller[i]);
+      Double elt = Double.valueOf(smaller[i]);
       if (!setBigger.contains(elt)) return false;
     }
 

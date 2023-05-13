@@ -1398,7 +1398,7 @@ public class PptTopLevel extends Ppt {
   private List<Integer> sliceIndex(VarInfo[] vis) {
     Integer[] a = new Integer[vis.length];
     for (int i = 0; i < vis.length; i++) {
-      a[i] = new Integer(vis[i].varinfo_index);
+      a[i] = Integer.valueOf(vis[i].varinfo_index);
     }
     return Arrays.asList(a);
   }
@@ -2878,9 +2878,9 @@ public class PptTopLevel extends Ppt {
           if (demerits.containsKey(problem))
             demerits.put(
               problem,
-              new Integer(demerits.get(problem).intValue() + 1));
+              Integer.valueOf(demerits.get(problem).intValue() + 1));
           else
-            demerits.put(problem, new Integer(1));
+            demerits.put(problem, Integer.valueOf(1));
         }
         int max_demerits = -1;
         Vector<Lemma> worst = new Vector<Lemma>();
