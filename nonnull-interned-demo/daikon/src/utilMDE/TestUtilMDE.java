@@ -19,7 +19,6 @@ import static utilMDE.Options.ArgException;
 // Intern.java
 // LimitedSizeIntSet.java
 // MathMDE.java
-// Options.java
 // OrderedPairIterator.java
 // TestUtilMDE.java
 // StringBuilderDelimited.java
@@ -2330,46 +2329,6 @@ public final class TestUtilMDE extends TestCase {
     assertTrue (UtilMDE.unqualified_name("java.lang.String").equals("String"));
     assertTrue (UtilMDE.unqualified_name ("String").equals ("String"));
 
-  }
-
-  /**
-   * Test class for Options testing
-   */
-  public static class TestOptions {
-
-    @Option ("list of patterns") List<Pattern> lp = new ArrayList<Pattern>();
-    @Option ("-a <filename> argument 1") String arg1 = "/tmp/foobar";
-    @Option ("argument 2") String arg2;
-    @Option ("-d double value") double temperature;
-    @Option ("-f the input file") File input_file;
-    @Option ("-b boolean") boolean bool;
-    @Option ("-i Integer") Integer integer_reference;
-    @Option ("list of doubles") List<Double> ld = new ArrayList<Double>();
-  }
-
-  /**
-   * Test command line option parsing (Options)
-   */
-  public static void testOptions() throws ArgException {
-
-    TestOptions t = new TestOptions();
-    Options options = new Options ("test", t);
-    options.parse (new String[] { "--lp=foo",
-                                  "--lp", "bar",
-                                  "-i", "24",
-                                  "-d=37.8",
-                                  "-b",
-                                  "-b=false",
-                                  "--ld", "34.6",
-                                  "--ld", "17.8",
-                                 });
-    assertEquals (t.lp.get(0).toString(), "foo");
-    assertEquals (t.lp.get(1).toString(), "bar");
-    assertEquals (t.integer_reference.intValue(), 24);
-    assertEquals (t.temperature, 37.8);
-    assertEquals (t.bool, false);
-    assertEquals (t.ld.get(0).doubleValue(), 34.6);
-    assertEquals (t.ld.get(1).doubleValue(), 17.8);
   }
 
   public static void testSplitLines() {

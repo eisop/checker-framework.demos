@@ -1066,7 +1066,7 @@ public class Instrument implements ClassFileTransformer {
                               DaikonWriter.methodExitName(class_info.class_name, getArgTypes(mgen), mgen.toString(), mgen.getName(), line_number)))
               {
                 shouldInclude = true;
-                exit_locs.add(new Integer(line_number));
+                exit_locs.add(Integer.valueOf(line_number));
 
                 isIncluded.add(true);
               }

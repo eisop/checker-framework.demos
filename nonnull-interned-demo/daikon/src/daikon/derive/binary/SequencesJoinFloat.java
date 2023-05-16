@@ -95,10 +95,10 @@ public final class SequencesJoinFloat
       Object e1 = null;
       Object e2 = null;
       if (val1 instanceof double[]) {
-        e1 = new Double (((double[]) val1) [i]);
+        e1 = Double.valueOf(((double[]) val1) [i]);
       }
       if (val2 instanceof double[]) {
-        e2 = new Double (((double[]) val2) [i]);
+        e2 = Double.valueOf(((double[]) val2) [i]);
       }
       if (val1 instanceof Object[]) {
         e1 = ((Object[]) val1) [i];
@@ -106,8 +106,8 @@ public final class SequencesJoinFloat
       if (val2 instanceof Object[]) {
         e2 = ((Object[]) val2) [i];
       }
-      if (e1 == null) e1 = new Double(0);
-      if (e2 == null) e2 = new Double(0);
+      if (e1 == null) e1 = Double.valueOf(0);
+      if (e2 == null) e2 = Double.valueOf(0);
       result[i] = (e1.hashCode() << 8) + e2.hashCode();
     }
 
