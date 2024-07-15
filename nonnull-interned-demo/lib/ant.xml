@@ -36,7 +36,7 @@
         <arg line="@{files}"/>
         <arg line="-Xlint:-options"/>
         <arg line="-Alint=@{lint}"/>
-        <arg line="-Anocheckjdk"/>
+        <arg line="-ApermitMissingJdk"/>
         <arg line="-AsuppressWarnings=purity"/>
       </java>
     </sequential>
