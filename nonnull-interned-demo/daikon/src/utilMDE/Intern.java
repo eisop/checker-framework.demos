@@ -8,6 +8,7 @@ import org.checkerframework.checker.interning.qual.Interned;
 /**
  * Utilities for interning objects.
  **/
+@SuppressWarnings("identity") // JDK 25+ does not consider Interned
 public final class Intern {
   private Intern() { throw new Error("do not instantiate"); }
 
