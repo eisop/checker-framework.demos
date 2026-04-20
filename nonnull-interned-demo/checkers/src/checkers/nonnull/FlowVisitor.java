@@ -26,6 +26,7 @@ import static checkers.types.InternalUtils.*;
  * an argument to a method.
  */
 @DefaultQualifier(NonNull.class)
+@SuppressWarnings("removal") // JDK 27 b17 deprecations
 class FlowVisitor extends TreePathScanner<Void, Void> {
 
     /** The root of the source tree (required for pathfinding). */

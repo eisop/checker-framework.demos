@@ -36,6 +36,7 @@ import org.checkerframework.checker.initialization.qual.Initialized;
  * </ul>
  */
 @DefaultQualifier(NonNull.class)
+@SuppressWarnings("removal") // JDK 27 b17 deprecations
 public class NonnullAnnotatedTypeFactory extends AnnotatedTypeFactory {
 
     /** Used to perform flow-sensitive nonnull analysis. */
