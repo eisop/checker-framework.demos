@@ -1,6 +1,6 @@
 src/checkers/nonnull/NonnullAnnotatedTypeFactory.java:204: error: dereference of possibly-null reference elt
         if (elt.getKind() == ElementKind.ENUM_CONSTANT)
-            ^
+               ^
 1 error
 
 BUILD FAILED
